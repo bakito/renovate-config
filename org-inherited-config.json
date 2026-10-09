@@ -1,0 +1,192 @@
+{
+  "extends": [
+    ":gitSignOff",
+    ":semanticCommits",
+    ":enableVulnerabilityAlerts",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "groupName": "security updates"
+  },
+  "prConcurrentLimit": 50,
+  "branchConcurrentLimit": 50,
+  "prHourlyLimit": 50,
+  "labels": [
+    "dependencies"
+  ],
+  "configMigration": true,
+  "osvVulnerabilityAlerts": true,
+  "migratePresets": {
+    "config:base": "config:recommended"
+  },
+  "dependencyDashboardApproval": false,
+  "dependencyDashboard": true,
+  "postUpdateOptions": [
+    "gomodTidy",
+    "gomodUpdateImportPaths"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchDepTypes": [
+        "indirect"
+      ],
+      "enabled": false,
+      "groupName": "Indirect Go dependencies"
+    },
+    {
+      "matchPackageNames": [
+        "k8s.io/**"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "k8s"
+    },
+    {
+      "matchPackageNames": [
+        "github.com/onsi/**"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "onsi",
+      "automerge": true
+    },
+    {
+      "matchPackageNames": [
+        "charm.land/**"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "charm.land"
+    },
+    {
+      "matchPackageNames": [
+        "go.etcd.io/etcd/**"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "etcd"
+    },
+    {
+      "matchPackageNames": [
+        "github.com/golang-jwt/**"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "golang-jwt"
+    },
+    {
+      "matchPackageNames": [
+        "go.opentelemetry.io",
+        "go.opentelemetry.io/otel/**"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "otel"
+    },
+    {
+      "matchPackageNames": [
+        "go.uber.org/**"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "uber"
+    },
+    {
+      "matchManagers": [
+        "gomod"
+      ],
+      "labels": [
+        "dependencies",
+        "go"
+      ]
+    },
+    {
+      "matchManagers": [
+        "dockerfile",
+        "docker-compose"
+      ],
+      "labels": [
+        "dependencies",
+        "docker"
+      ]
+    },
+    {
+      "matchManagers": [
+        "ansible-galaxy"
+      ],
+      "labels": [
+        "dependencies",
+        "ansible"
+      ]
+    },
+    {
+      "matchManagers": [
+        "terraform"
+      ],
+      "labels": [
+        "dependencies",
+        "terraform"
+      ]
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "labels": [
+        "dependencies",
+        "github-actions"
+      ],
+      "groupName": "github-actions",
+      "automerge": true,
+      "prCreation": "immediate",
+      "minimumReleaseAge": "0 days"
+    },
+    {
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchDepTypes": [
+        "indirect"
+      ],
+      "enabled": true
+    },
+    {
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchDepTypes": [
+        "indirect"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "digest",
+        "pinDigest",
+        "lockFileMaintenance",
+        "rollback",
+        "replacement"
+      ],
+      "enabled": false
+    }
+  ]
+}
