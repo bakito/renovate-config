@@ -107,6 +107,16 @@
       "groupName": "uber"
     },
     {
+      "matchPackageNames": [
+        "golang.org/x/**"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "golang.org/x"
+    },
+    {
       "matchManagers": [
         "gomod"
       ],
