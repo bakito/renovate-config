@@ -6,6 +6,7 @@
     ":enableVulnerabilityAlerts",
     "helpers:pinGitHubActionDigests"
   ],
+  "commitMessageLowerCase": "auto",
   "vulnerabilityAlerts": {
     "enabled": true,
     "groupName": "security updates"
@@ -165,7 +166,16 @@
       "groupName": "github-actions",
       "automerge": true,
       "prCreation": "immediate",
-      "minimumReleaseAge": "0 days"
+      "minimumReleaseAge": "14 days"
+    },
+       {
+      "matchManagers": [
+        "gomod",
+        "dockerfile",
+        "docker-compose",
+        "regex"
+      ],
+      "minimumReleaseAge": "14 days"
     },
     {
       "matchManagers": [
