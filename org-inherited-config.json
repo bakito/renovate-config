@@ -17,9 +17,6 @@
   ],
   "configMigration": true,
   "osvVulnerabilityAlerts": true,
-  "migratePresets": {
-    "config:base": "config:recommended"
-  },
   "dependencyDashboardApproval": false,
   "dependencyDashboard": true,
   "postUpdateOptions": [
@@ -188,6 +185,5 @@
       ],
       "enabled": false
     }
-  ]
-  
+  ] 
 }
