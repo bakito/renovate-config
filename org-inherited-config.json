@@ -21,7 +21,9 @@
   "configMigration": true,
   "osvVulnerabilityAlerts": true,
   "dependencyDashboardApproval": false,
-  "dependencyDashboard": true,
+  "dependencyDashboard": {
+    "enabled": true
+  },
   "postUpdateOptions": [
     "gomodTidy",
     "gomodUpdateImportPaths"
