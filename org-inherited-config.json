@@ -4,7 +4,8 @@
     ":gitSignOff",
     ":semanticCommits",
     ":enableVulnerabilityAlerts",
-    "helpers:pinGitHubActionDigests"
+    "helpers:pinGitHubActionDigests",
+    ":dependencyDashboard",
   ],
   "semanticCommitType": "chore",
   "commitMessageLowerCase": "auto",
@@ -20,10 +21,6 @@
   ],
   "configMigration": true,
   "osvVulnerabilityAlerts": true,
-  "dependencyDashboardApproval": false,
-  "dependencyDashboard": {
-    "enabled": true
-  },
   "postUpdateOptions": [
     "gomodTidy",
     "gomodUpdateImportPaths"
